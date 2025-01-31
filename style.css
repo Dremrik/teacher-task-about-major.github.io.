@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', Sans-Serif;
+  box-sizing: border-box;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+  border: 0;
+  transition: all .3s;
+  text-transform: capitalize;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  background: linear-gradient(120deg, white, aqua, gray);
+  animation: gradient 20s easy infinite;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #252525;
+  padding: 2rem;
+  z-index: 2;
+}
+
+header nav {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header .nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .nav-header .logo {
+  color: white;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+header .nav-header .nav-btn {
+  background: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+header .nav-header .close-menu {
+  display: none;
+}
+
+header .navbar {
+  text-align: center;
+  height: 0;
+  overflow: hidden;
+  transition: all .3s ease-in;
+}
+
+header .navbar .nav-link {
+  font-size: 1.7rem;
+  display: inline-block;
+  padding: 1rem;
+  color: #fff;
+  transition: all .3s ease-in;
+}
+
+header .navbar .nav-link:hover {
+  color: dodgerblue;
+}
+
+.navbar.active {
+  height: 18rem;
+}
+
+header .nav-header .nav-btn.active .open-menu {
+  display: none;
+}
+
+header .nav-header .nav-btn.active .close-menu {
+  display: block;
+}
+
+/* Вирівнюємо заголовок по центру */
+.about {
+  display: inline-block;
+  position: relative;
+  justify-content: none;
+  text-align: none;
+  font-size: 3rem;
+  max-width: 500px;
+  max-height: 100vh;
+  bottom: 10rem; /* Відступ від меню */
+  overflow: hidden;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+#typed-text {
+  display: inline-block;
+  position: relative;
+  bottom: 10rem;
+  max-width: 500px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }  
+  100% { background-position: 0% 50%; }
+}
+
+@media screen and (max-width: 768px) {
+  header .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header .navbar {
+    text-align: center;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    transition: all .3s ease-in;
+  }
+
+  header .navbar.active {
+    height: auto;
+  }
+
+  .about {
+    display: inline-block;
+    font-size: 2.5rem;
+    padding: 2rem;
+    margin-top: 50rem; /* Більший відступ на малих екранах */
+  }
+}
